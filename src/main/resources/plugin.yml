@@ -1,0 +1,17 @@
+name: SpaceSuits
+version: 1.0
+main: io.github.trystancannon.spacesuits.core.SpacesuitsPlugin
+
+commands:
+    spacesuits:
+        description: Spacesuits base command.
+        usage: /<command> [sub command] [args...]
+        permission: spacesuits.world
+
+permissions:
+    spacesuits.world:
+        description: Allows users to toggle worlds as being space worlds.
+        default: op
+    spacesuits.bypass:
+        description: Bypasses damage caused by being without one's space suit.
+        default: op
