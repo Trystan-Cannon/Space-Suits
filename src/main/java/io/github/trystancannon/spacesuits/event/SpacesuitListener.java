@@ -25,11 +25,9 @@ package io.github.trystancannon.spacesuits.event;
 
 import io.github.trystancannon.spacesuits.core.SpacesuitsPlugin;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.inventory.EntityEquipment;
 
 /**
@@ -96,8 +94,9 @@ public final class SpacesuitListener implements Listener, Runnable {
      * is no currently scheduled task.
      */
     public void stop() {
-        if (taskId == -1) {
+        if (taskId != -1) {
             plugin.getServer().getScheduler().cancelTask(taskId);
+            taskId = -1;
         }
     }
     
